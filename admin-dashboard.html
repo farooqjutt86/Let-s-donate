@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - چلیں دیں</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">💚 چلیں دیں - Admin Panel</h1>
+            <button class="logout-btn" onclick="logoutAdmin()">🚪 Logout</button>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <div class="container">
+        <div class="admin-header">
+            <h2>📊 Donation Requests</h2>
+            <p>تمام صدقات کی تفصیلات</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3 id="totalDonations">0</h3>
+                <p>کل صدقات</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="totalAmount">Rs. 0</h3>
+                <p>کل رقم</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="totalDonors">0</h3>
+                <p>کل عطا کنندگان</p>
+            </div>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="admin-controls">
+            <input type="text" id="searchInput" placeholder="نام یا ای میل سے تلاش کریں..." class="search-box">
+            <select id="sortBy" class="sort-select">
+                <option value="latest">تازہ ترین</option>
+                <option value="oldest">پرانے</option>
+                <option value="highest">سب سے زیادہ رقم</option>
+                <option value="lowest">سب سے کم رقم</option>
+            </select>
+        </div>
+
+        <!-- Donations Table -->
+        <div class="admin-table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>نام</th>
+                        <th>ای میل</th>
+                        <th>رقم</th>
+                        <th>دعا کے لیے</th>
+                        <th>تبصرہ</th>
+                        <th>اسکرین شاٹ</th>
+                        <th>تاریخ</th>
+                        <th>عمل</th>
+                    </tr>
+                </thead>
+                <tbody id="donationsTableBody">
+                    <!-- Donations will appear here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- No Donations Message -->
+        <div id="noDonations" class="no-data">
+            <p>ابھی کوئی صدقہ نہیں ہوا</p>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content-large">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="Payment Screenshot">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
